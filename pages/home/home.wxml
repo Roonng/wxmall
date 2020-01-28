@@ -1,2 +1,23 @@
-<!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<view hidden="{{!isshowTabcon}}">
+ <w-tabControll class="tabcon1" title="{{title}}" bind:itemClick="tabconClick" />
+</view>
+<!-- 轮播图 -->
+<w-swiper list="{{banners}}"/>
+<!-- 推荐 -->
+<w-recommend list="{{recommends}}" bind:imgLoad="handleImgLoad"/>
+<!-- 流行图 -->
+<w-popular />
+<!-- tabControll -->
+
+
+<w-tabControll class="tabcon2" title="{{title}}" bind:itemClick="tabconClick"/>
+
+<!-- <w-tabControll id="tabcon1" class="{{isshowTabcon? 'fiexd' : ''}}" title="{{title}}" bind:itemClick="tabconClick"/>
+
+<w-tabControll class="tabcon2" title="{{title}}" bind:itemClick="tabconClick" wx:if="{{isshowTabcon}}"/> -->
+<!-- 商品显示 -->
+<w-goods goods="{{goods[currentType].list}}"/>
+<!-- 返回顶部 -->
+<w-back-top wx-if="{{isShowBackTop}}"/>
+
+

@@ -1,4 +1,13 @@
 {
-  "usingComponents": {},
-  "navigationBarTitleText": "购物街"
+  "usingComponents": {
+    "w-swiper": "/components/w-swiper/swiper",
+    "w-tabControll": "/components/w-tabControll/w-tabControll",
+    "w-goods": "/components/w-goods/w-goods",
+    "w-back-top": "/components/w-back-top/w-back-top",
+    "w-recommend": "./childComps/w-recommend/w-recommend",
+    "w-popular": "./childComps/w-popular/w-popular"
+    
+  },
+  "navigationBarTitleText": "购物街",
+  "enablePullDownRefresh": true
 }
