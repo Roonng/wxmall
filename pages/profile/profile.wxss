@@ -1,1 +1,80 @@
 /* pages/profile/profile.wxss */
+.profile{
+  background: #F8F8F8;
+}
+.head{
+  height: 200rpx;
+  background-color: #ff5777;
+}
+
+.head-img{
+  display: inline-block;
+  vertical-align: middle;
+  height: 140rpx;
+  width: 140rpx;
+  background-color: #F2F2F2;
+  border-radius: 50%;
+  margin: 0 35rpx 0 35rpx;
+
+}
+.head-img image{
+  height: 140rpx;
+  width: 140rpx;
+}
+
+.head-info{
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  height: 120rpx;
+  width: 526rpx;
+  margin-top: 20rpx;
+  color: #fff;
+}
+
+.bindPhone image{
+  display: inline-block;
+  vertical-align: middle;
+  height: 34rpx;
+  width: 34rpx;
+}
+.bindPhone{
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 28rpx;
+}
+
+.right-icon{
+  height: 60rpx;
+  width: 60rpx;
+  margin-bottom: 20rpx;
+  position: absolute;
+  right: 0;
+  bottom: 14rpx;
+}
+
+.count-info{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.balance,.discount,.integral{
+  height: 190rpx;
+  width: 33%;
+  background: #fff;
+  color: #777777;
+}
+.c-title{
+  margin-top: 44rpx;
+}
+.c-title text{
+  font-size: 40rpx;
+  color: #ff5777;
+  font-weight: bold;
+}
+
+
+
+

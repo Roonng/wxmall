@@ -1,2 +1,6 @@
 <!--pages/category/category.wxml-->
-<text>pages/category/category.wxml</text>
+<view class="category">
+  <w-left-nav bind:navItemClick="navItemClick" navList="{{navList}}"/>
+  <w-content contentList="{{contentList}}"/>
+</view>
+

@@ -1,2 +1,36 @@
-<!--pages/profile/profile.wxml-->
-<text>pages/profile/profile.wxml</text>
+<view class="profile">
+  <view class="head">
+    <view class="head-img">
+      <image src="/assets/images/profile/avatar.png"/>
+    </view>
+    <view class="head-info">
+      <view class="login">
+        登录/注册
+      </view>
+      <view class="bindPhone">
+        <image src="/assets/images/profile/phone.png"/>
+        <text>暂无绑定手机号</text>
+      </view>
+      <image class="right-icon" src="/assets/images/common/arrow-right.png"/>
+    </view>
+  </view>
+  <view class="count-info">
+    <view class="balance">
+      <view class="c-title"><text>0.00</text>元</view>
+      <view class="c-name">我的余额</view>
+    </view>
+    <view class="discount">
+      <view class="c-title"><text>0</text>个</view>
+      <view class="c-name">我的优惠</view>
+    </view>
+    <view class="integral">
+      <view class="c-title"><text>0</text>分</view>
+      <view class="c-name">我的积分</view>
+    </view>
+  </view>
+
+  <w-list info="{{orderList}}"/>
+  <w-list info="{{serviceList}}"/>
+  
+</view>
+

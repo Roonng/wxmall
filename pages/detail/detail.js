@@ -1,26 +1,22 @@
-// pages/profile/profile.js
+// pages/detail/detail.js
+import { getDetail,GoodsBaseInfo,ShopInfo } from "../../service/detail"
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    orderList: [
-      {"icon": "message.png", "title": "我的消息"},
-      {"icon": "pointer.png", "title": "积分商城"},
-      {"icon": "vip.png", "title": "会员卡"},
-    ],
-
-    serviceList: [
-      {"icon": "cart.png", "title": "我的购物车"},
-      {"icon": "app.png", "title": "下载购物APP"}
-    ]
+    topImages: [],
+    baseInfo: {},
+    shopInfo: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    const iid = options.iid
+    this._getDetail(iid)
 
   },
 
@@ -37,7 +33,27 @@ Page({
   onShow: function () {
 
   },
+  //获取详情页数据
+  _getDetail(iid){
+    getDetail(iid).then(res => {
+      console.log(res)
+      const data = res.data.result
+      console.log(data)
+      const topImages = data.itemInfo.topImages
 
+      // 创建BaseInfo对象
+      const baseInfo = new GoodsBaseInfo(data.itemInfo, data.columns, data.shopInfo.services)
+
+      // 创建ShopInfo对象
+      const shopInfo = new ShopInfo(data.shopInfo);
+      console.log(topImages)
+      this.setData({
+        topImages,
+        baseInfo,
+        shopInfo
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

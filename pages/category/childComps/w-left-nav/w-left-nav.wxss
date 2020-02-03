@@ -1,0 +1,19 @@
+/* pages/category/childComps/w-left-nav/w-left-nav.wxss */
+.menu{
+  height: 100%;
+  font-size: 28rpx;
+}
+.nav-item{
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #F6F6F6;
+  text-align: center;
+  color: #777777;
+}
+.active{
+  background-color: #fff;
+  color: #ff5777;
+  border-left: 8rpx solid #ff5777;
+  font-weight: bold;
+}
+

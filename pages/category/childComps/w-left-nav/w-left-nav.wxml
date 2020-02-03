@@ -1,0 +1,10 @@
+<scroll-view scroll-y class="menu">
+  <block wx:for="{{navList}}" wx:key="index">
+    <view 
+      class="nav-item {{index == currentIndex? 'active' : ''}}" 
+      bindtap="itemClick" 
+      data-index="{{index}}"
+      data-maitKey="{{item.maitKey}}"
+      >{{item.title}}</view>
+  </block>
+</scroll-view>

@@ -19,7 +19,8 @@ Page({
     entitle: ['pop', 'new', 'sell'],
     isShowBackTop: false,
     isshowTabcon: false,
-    tapconTop: 0
+    tapconTop: 0,
+    flag2: false,
   },
 
   /**
@@ -49,6 +50,7 @@ Page({
   _getGoodsData(type){
     const page = this.data.goods[type].page + 1
     getGoodsData(type, page).then(res => {
+      console.log(res)
       const newlist = this.data.goods[type].list
       newlist.push(...res.data.data.list)
       
@@ -85,17 +87,25 @@ Page({
         isShowBackTop: flag,
       })
     }
-    console.log(scrollTop)
-    console.log(this.data.tapconTop)
+    // console.log(scrollTop)
+    // console.log(this.data.tapconTop)
     const flag2 = scrollTop >= this.data.tapconTop
-    this.setData({
-      isshowTabcon: flag2
-    })
+    if(flag2 != this.data.flag2){
+      this.setData({
+        isshowTabcon: flag2,
+        flag2: flag2,
+      })
+    }
+
+   
   },
   //监听推荐图片加载完成
   handleImgLoad(){
     wx.createSelectorQuery().select(".tabcon2").boundingClientRect(react => {
       this.data.tapconTop = react.top
+      this.setData({
+        tapconTop: react.top
+      })
     }).exec()
   },
   

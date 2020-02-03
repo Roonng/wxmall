@@ -1,0 +1,18 @@
+.w-list{
+  margin-top: 40rpx;
+  color: #777777;
+}
+.item{
+  height: 100rpx;
+  line-height: 100rpx;
+  /* width: 100%; */
+  background: #fff;
+  font-size: 32rpx;
+  margin-top: 2rpx;
+}
+.item image{
+  height: 40rpx;
+  width: 40rpx;
+  margin: 0rpx 20rpx 0 20rpx;
+  vertical-align: middle;
+}

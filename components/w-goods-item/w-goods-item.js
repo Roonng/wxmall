@@ -21,6 +21,13 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    itemClick(e){
+      console.log(e)
+      const iid = e.currentTarget.dataset.iid
 
+      wx.navigateTo({
+        url: '/pages/detail/detail?iid=' + iid,
+      })
+    }
   }
 })

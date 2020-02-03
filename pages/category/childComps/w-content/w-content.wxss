@@ -1,0 +1,23 @@
+/* pages/category/childComps/w-content/w-content.wxss */
+.content{
+  height: 100%;
+}
+.con{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20rpx;
+}
+.contItem{
+  width: 33.33%;
+  /* display: inline-block; */
+  text-align: center;
+  color: #777777;
+}
+.contItem image{
+  height: 130rpx;
+  width: 130rpx;
+  padding: 40rpx 0;
+}
+.contItem view{
+  font-size: 28rpx;
+}

@@ -1,6 +1,3 @@
-<view hidden="{{!isshowTabcon}}">
- <w-tabControll class="tabcon1" title="{{title}}" bind:itemClick="tabconClick" />
-</view>
 <!-- 轮播图 -->
 <w-swiper list="{{banners}}"/>
 <!-- 推荐 -->
@@ -9,6 +6,9 @@
 <w-popular />
 <!-- tabControll -->
 
+<view hidden="{{!isshowTabcon}}">
+  <w-tabControll class="tabcon1" title="{{title}}" bind:itemClick="tabconClick"/>
+</view>
 
 <w-tabControll class="tabcon2" title="{{title}}" bind:itemClick="tabconClick"/>
 

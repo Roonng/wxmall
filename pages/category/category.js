@@ -1,18 +1,25 @@
 // pages/category/category.js
+import { 
+  getCategory,
+  getSubcategory 
+} from '../../service/category'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    navList: [],
+    contentList: []
   },
+
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this._getCategory()
+    
   },
 
   /**
@@ -26,7 +33,38 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+   
+  },
+  
+  //获取左边导航栏项
+  _getCategory(){
+    getCategory().then(res => {
+      const list = res.data.data.category.list
+      const initmaitKey = list[0].maitKey
+      const initConList = this._getSubcategory(initmaitKey)
+      console.log(list)
+      this.setData({
+        navList: list,
+        contentList: initConList
+      })
+    })
+  },
 
+  //左边导航栏点击函数
+  navItemClick(e){
+    const maitKey = e.detail.maitKey
+    this._getSubcategory(maitKey)
+  },
+
+  //通过maitKey获取内容数据
+  _getSubcategory(maitKey){
+    getSubcategory(maitKey).then(res => {
+      const list = res.data.data.list
+      console.log(list)
+      this.setData({
+        contentList: list
+      })
+    })
   },
 
   /**

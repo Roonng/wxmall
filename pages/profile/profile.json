@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "w-list": "./childComps/w-list/w-list"
+  },
+  "navigationBarTitleText": "我的"
 }
