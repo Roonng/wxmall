@@ -1,63 +1,13 @@
-<!--pages/cart/cart.wxml-->
-<scroll-view scroll-y class="scroll">
-  <view>1</view>
-  <view>2</view>
-  <view>3</view>
-  <view>4</view>
-  <view>5</view>
-  <view>6</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-  <view>7</view>
-</scroll-view>
+<view class="cart">
+  <scroll-view class="cart-list" scroll-y>
+    <block wx:for="{{cartList}}" wx:key="index">
+      <cart-list-item goods="{{item}}" index="{{index}}"/>
+    </block>
+  </scroll-view>
+  <bottom-bar  
+    price="{{totalPrice}}"
+    counter="{{count}}" 
+    bind:selectAll="selectAll" 
+    selected="{{isSelectAll}}"/>
+</view>
+

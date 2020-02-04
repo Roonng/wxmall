@@ -1,11 +1,13 @@
 // pages/detail/detail.js
 import { getDetail,GoodsBaseInfo,ShopInfo } from "../../service/detail"
-Page({
+const app = getApp()
 
+Page({
   /**
    * 页面的初始数据
    */
   data: {
+    iid: "",
     topImages: [],
     baseInfo: {},
     shopInfo: {}
@@ -16,6 +18,9 @@ Page({
    */
   onLoad: function (options) {
     const iid = options.iid
+    this.setData({
+      iid
+    })
     this._getDetail(iid)
 
   },
@@ -32,6 +37,22 @@ Page({
    */
   onShow: function () {
 
+  },
+  //加入购物车
+  onAddCart(){
+    // 1.获取商品对象
+    const obj = {}
+    obj.iid = this.data.iid;
+    obj.imageURL = this.data.topImages[0];
+    obj.title = this.data.baseInfo.title;
+    obj.desc = this.data.baseInfo.desc;
+    obj.price = this.data.baseInfo.realPrice;
+    obj.count = 1
+
+    app.addToCart(obj)
+    wx.showToast({
+      title: '已添加到购物车'
+    })
   },
   //获取详情页数据
   _getDetail(iid){

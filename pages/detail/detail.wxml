@@ -3,4 +3,4 @@
   <w-base-info baseInfo="{{baseInfo}}"/>
   <w-shop-info shopInfo="{{shopInfo}}"/>
 </scroll-view>
-<w-bottom-bar/>
+<w-bottom-bar bind:addcart="onAddCart"/>

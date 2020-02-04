@@ -1,4 +1,8 @@
-.scroll{
-  height: 200rpx;
-  width: 100rpx;
+/* pages/cart/cart.wxss */
+.cart {
+  height: 100%;
+}
+
+.cart-list {
+  height: calc(100% - 88rpx);
 }

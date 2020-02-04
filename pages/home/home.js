@@ -50,7 +50,6 @@ Page({
   _getGoodsData(type){
     const page = this.data.goods[type].page + 1
     getGoodsData(type, page).then(res => {
-      console.log(res)
       const newlist = this.data.goods[type].list
       newlist.push(...res.data.data.list)
       
@@ -87,8 +86,6 @@ Page({
         isShowBackTop: flag,
       })
     }
-    // console.log(scrollTop)
-    // console.log(this.data.tapconTop)
     const flag2 = scrollTop >= this.data.tapconTop
     if(flag2 != this.data.flag2){
       this.setData({

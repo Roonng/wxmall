@@ -75,6 +75,10 @@
   font-weight: bold;
 }
 
+w-test view{
+  margin-left: 100px;
+}
+
 
 
 
